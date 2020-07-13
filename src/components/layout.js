@@ -8,9 +8,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavigationBar from "./navbar"
 
-import Header from "./header"
-import "./layout.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,23 +24,15 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
+    <div className="bg-secondary">
+      <NavigationBar />
+        <main className="bg-secondary container">{children}</main>
+        <footer className="bg-dark text-center text-light" style={{padding: 50}}>
+          © {new Date().getFullYear()}, Built by Felix Junior Perez Peguero with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
-    </>
   )
 }
 

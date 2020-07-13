@@ -1,21 +1,24 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import Jumbotron from "react-bootstrap/Jumbotron";
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+    <SEO title="Pagina principal" />
+    <Jumbotron className="bg-dark" style={{marginTop:66}}>
+
+      <h1 className="text-light text-center mb-5">Bienvenido a Felix Engineering</h1>
+      <h3 className="text-center text-light">Te invito a que me conozcas más dirigiéndote a los siguientes apartados:</h3>
+      <div className="list-group mt-5">
+        <Link className="list-group-item list-group-item-action list-group-item-dark" to="biographyPage">Biografía</Link>
+        <Link className="list-group-item list-group-item-action list-group-item-dark" to="hobbiesPage">Pasatiempos</Link>
+        <Link className="list-group-item list-group-item-action list-group-item-dark" to="abilitiesPage">Habilidades</Link>
+      </div>
+
+    </Jumbotron>
   </Layout>
 )
 
